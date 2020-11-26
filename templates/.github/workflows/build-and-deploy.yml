@@ -1,0 +1,29 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Repo"
+        uses: actions/checkout@master
+      
+      - name: "Install pnpm"
+        uses: pnpm/action-setup@v1.2.1
+        with:
+          version: 5.x
+      - name: "Install Dependencies"
+        run: "pnpm install"
+      
+      - name: "Generate a Static Site"
+        run: "pnpm run build"
+      - name: "Deploy Firebase Hosting"
+        # The hosting dashboard will show this commit message
+        run: "pnpm run deploy -- -m ${{ github.event.head_commit.message }}"
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
