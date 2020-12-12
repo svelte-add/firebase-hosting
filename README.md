@@ -34,6 +34,8 @@ After the preset runs,
 
 * You can use the `deploy` package script to manually deploy the site after a `build`.
 
+* You can apply *another* [Svelte Adder](https://github.com/babichjacob/svelte-adders) to your project for more functionality. 
+
 ## 😵 Help! I have a question
 [Create an issue](https://github.com/babichjacob/svelte-add-firebase-hosting/issues/new) and I'll try to help.
 
