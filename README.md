@@ -17,7 +17,7 @@ npx use-preset babichjacob/svelte-add-firebase-hosting --no-ssh
 ```
 
 After the preset runs,
-* [You *cannot* use server-side rendering](https://github.com/babichjacob/svelte-add-firebase-hosting/issues/1). Your site must be static. This means that, among other things, [`svelte-add-graphql`](https://github.com/babichjacob/svelte-add-graphql) is currently not suitable to be hosted on Firebase.
+* [You *cannot* use server-side rendering](https://github.com/svelte-add/firebase-hosting/issues/1). Your site must be static. This means that, among other things, [`svelte-add/graphql`](https://github.com/svelte-add/graphql) is currently not suitable to be hosted on Firebase.
 
 * Consider setting up GitHub Actions for automatic building and deployment to Firebase.
   
@@ -37,10 +37,10 @@ After the preset runs,
 * You can apply *another* [Svelte Adder](https://github.com/babichjacob/svelte-adders) to your project for more functionality. 
 
 ## 😵 Help! I have a question
-[Create an issue](https://github.com/babichjacob/svelte-add-firebase-hosting/issues/new) and I'll try to help.
+[Create an issue](https://github.com/svelte-add/firebase-hosting/issues/new) and I'll try to help.
 
 ## 😡 Fix! There is something that needs improvement
-[Create an issue](https://github.com/babichjacob/svelte-add-firebase-hosting/issues/new) or [pull request](https://github.com/babichjacob/svelte-add-firebase-hosting/pulls) and I'll try to fix.
+[Create an issue](https://github.com/svelte-add/firebase-hosting/issues/new) or [pull request](https://github.com/svelte-add/firebase-hosting/pulls) and I'll try to fix.
 
 These are new tools, so there are likely to be problems in this project. Thank you for bringing them to my attention or fixing them for me.
 
