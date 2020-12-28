@@ -1,5 +1,5 @@
 {
-    "name": "svelte-add-firebase-hosting",
+    "name": "svelte-add/firebase-hosting",
     "private": true,
     "version": "2020.11.26",
     "description": "A command to add hosting on Firebase to your SvelteKit project",
@@ -14,10 +14,10 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/babichjacob/svelte-add-firebase-hosting.git"
+        "url": "https://github.com/svelte-add/firebase-hosting.git"
     },
-    "bugs": "https://github.com/babichjacob/svelte-add-firebase-hosting/issues",
-    "homepage": "https://github.com/babichjacob/svelte-add-firebase-hosting",
+    "bugs": "https://github.com/svelte-add/firebase-hosting/issues",
+    "homepage": "https://github.com/svelte-add/firebase-hosting",
     "preset": "preset.ts",
     "devDependencies": {
         "use-preset": "^0.2.5"
