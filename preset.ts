@@ -1,4 +1,4 @@
-import { Preset } from "use-preset";
+import { Preset } from "apply";
 
 Preset.setName("svelte-add-firebase-hosting");
 
@@ -18,7 +18,7 @@ Preset.group((preset) => {
 }).withTitle("Initializing Firebase");
 
 Preset.group((preset) => {
-	preset.editNodePackages().addDev("firebase-tools", "^8.16.2").withTitle("Installing Firebase CLI");
+	preset.editNodePackages().addDev("firebase-tools", "^9.1.0").withTitle("Installing Firebase CLI");
 	preset.editNodePackages().addDev("ncp", "^2.0.0").withTitle("Installing `ncp`");
 	preset.editNodePackages().addDev("npm-run-all", "^4.1.5").withTitle("Installing `npm-run-all`");
 	preset.editNodePackages().addDev("rimraf", "^3.0.2").withTitle("Installing `rimraf`");
@@ -43,11 +43,11 @@ Preset.group((preset) => {
 	preset.edit("package.json").update((content) => {
 		const pkg = JSON.parse(content);
 
-		// Preserve old build script instead of heavy-handedly replacing it
-		const build = pkg.scripts.build;
-		pkg.scripts["svelte:build"] = build;
+		// Preserve old adapt script instead of heavy-handedly replacing it
+		const adapt = pkg.scripts.adapt;
+		pkg.scripts["svelte:adapt"] = adapt || "svelte-kit adapt";
 
-		pkg.scripts["build"] = "run-s svelte:build cp:404 rm:404";
+		pkg.scripts["adapt"] = "run-s svelte:adapt cp:404 rm:404";
 
 		return JSON.stringify(pkg, null, "\t");
 	}).withTitle("Updating `build` package script to make use of the 404 scripts");
@@ -60,7 +60,7 @@ Preset.group((preset) => {
 }).withTitle("Adding package scripts");
 
 Preset.group((preset) => {
-	preset.editNodePackages().addDev("@sveltejs/adapter-static", "^0.0.14").withTitle("Installing `@sveltejs/adapter-static`");
+	preset.editNodePackages().addDev("@sveltejs/adapter-static", "1.0.0-next.0").withTitle("Installing `@sveltejs/adapter-static`");
 	preset.edit("svelte.config.js").update((content) => {
 		const matchAdapter = /adapter:[\s\n]['"](.+)['"]/;
 		return content.replace(matchAdapter, (_match, _currentAdapter) => 'adapter: "@sveltejs/adapter-static"');

@@ -13,7 +13,7 @@ npm init svelte@next
 
 Once that is set up, run this command in your project directory to set up hosting on Firebase:
 ```sh
-npx use-preset babichjacob/svelte-add-firebase-hosting --no-ssh
+npx apply svelte-add/firebase-hosting # --no-ssh
 ```
 
 After the preset runs,
@@ -32,7 +32,7 @@ After the preset runs,
 
 * You can create a custom 404 page at `src/routes/404.svelte`.
 
-* You can use the `deploy` package script to manually deploy the site after a `build`.
+* You can use the `deploy` package script to manually deploy the site after a `build` and an `adapt`.
 
 * You can apply *another* [Svelte Adder](https://github.com/babichjacob/svelte-adders) to your project for more functionality. 
 

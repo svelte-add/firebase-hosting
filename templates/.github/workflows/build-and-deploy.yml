@@ -20,8 +20,11 @@ jobs:
       - name: "Install Dependencies"
         run: "pnpm install"
       
-      - name: "Generate a Static Site"
+      # Is that the right description of what's happening?
+      - name: "Build the SvelteKit Manifest"
         run: "pnpm run build"
+      - name: "Generate a Static Site"
+        run: "pnpm run adapt"
       - name: "Deploy Firebase Hosting"
         # The hosting dashboard will show this commit message
         run: "pnpm run deploy -- -m ${{ github.event.head_commit.message }}"
