@@ -1,6 +1,6 @@
 import { Preset } from "apply";
 
-Preset.setName("svelte-add-firebase-hosting");
+Preset.setName("svelte-add/firebase-hosting");
 
 Preset.group((preset) => {
 	preset.input("project", "What is your Firebase project's ID, according to https://console.firebase.google.com/ ?", "my-project-123");
