@@ -26,7 +26,7 @@ jobs:
       - name: "Generate a Static Site"
         run: "pnpm run adapt"
       - name: "Deploy Firebase Hosting"
-        # The hosting dashboard will show this commit message
-        run: "pnpm run deploy -- -m \"${{ github.event.head_commit.message }}\""
+        run: "pnpm run deploy -- --message '$COMMIT_MESSAGE'"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
