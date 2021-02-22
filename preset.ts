@@ -45,12 +45,12 @@ Preset.group((preset) => {
 
 		// Preserve old adapt script instead of heavy-handedly replacing it
 		const adapt = pkg.scripts.adapt;
-		pkg.scripts["svelte:adapt"] = adapt || "svelte-kit adapt";
+		pkg.scripts["svelte-kit:adapt"] = adapt || "svelte-kit adapt";
 
-		pkg.scripts["adapt"] = "run-s svelte:adapt cp:404 rm:404";
+		pkg.scripts["adapt"] = "run-s svelte-kit:adapt cp:404 rm:404";
 
 		return JSON.stringify(pkg, null, "\t");
-	}).withTitle("Updating `build` package script to make use of the 404 scripts");
+	}).withTitle("Updating `adapt` package script to make use of the 404 scripts");
 
 	preset.editJson("package.json").merge({
 		"scripts": {
