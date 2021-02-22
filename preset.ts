@@ -62,7 +62,7 @@ Preset.group((preset) => {
 Preset.group((preset) => {
 	preset.editNodePackages().addDev("@sveltejs/adapter-static", "1.0.0-next.2").withTitle("Installing `@sveltejs/adapter-static`");
 	preset.edit("svelte.config.js").update((content) => {
-		const matchAdapter = /adapter:[\s\n]['"](.+)['"]/;
+		const matchAdapter = /adapter:[\s\r\n]['"](.+)['"]/;
 		return content.replace(matchAdapter, (_match, _currentAdapter) => 'adapter: "@sveltejs/adapter-static"');
 	}).withTitle("Setting the adapter to `@sveltejs/adapter-static` in `svelte.config.js`");
 }).withTitle("Making your site static");
