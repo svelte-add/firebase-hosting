@@ -18,7 +18,7 @@ Preset.group((preset) => {
 }).withTitle("Initializing Firebase");
 
 Preset.group((preset) => {
-	preset.editNodePackages().addDev("firebase-tools", "^9.1.0").withTitle("Installing Firebase CLI");
+	preset.editNodePackages().addDev("firebase-tools", "^9.4.0").withTitle("Installing Firebase CLI");
 	preset.editNodePackages().addDev("ncp", "^2.0.0").withTitle("Installing `ncp`");
 	preset.editNodePackages().addDev("npm-run-all", "^4.1.5").withTitle("Installing `npm-run-all`");
 	preset.editNodePackages().addDev("rimraf", "^3.0.2").withTitle("Installing `rimraf`");
@@ -60,7 +60,7 @@ Preset.group((preset) => {
 }).withTitle("Adding package scripts");
 
 Preset.group((preset) => {
-	preset.editNodePackages().addDev("@sveltejs/adapter-static", "1.0.0-next.0").withTitle("Installing `@sveltejs/adapter-static`");
+	preset.editNodePackages().addDev("@sveltejs/adapter-static", "1.0.0-next.2").withTitle("Installing `@sveltejs/adapter-static`");
 	preset.edit("svelte.config.js").update((content) => {
 		const matchAdapter = /adapter:[\s\n]['"](.+)['"]/;
 		return content.replace(matchAdapter, (_match, _currentAdapter) => 'adapter: "@sveltejs/adapter-static"');
