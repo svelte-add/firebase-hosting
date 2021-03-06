@@ -32,7 +32,7 @@ After the preset runs,
 
 * You can create a custom 404 page at `src/routes/404.svelte`.
 
-* You can use the `deploy` package script to manually deploy the site after a `build` and an `adapt`.
+* You can use the `deploy` package script to manually deploy the site after a `build`.
 
 * You can apply *another* [Svelte Adder](https://github.com/svelte-add/svelte-adders) to your project for more functionality. 
 

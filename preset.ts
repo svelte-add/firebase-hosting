@@ -37,20 +37,9 @@ Preset.group((preset) => {
 		"scripts": {
 			"cp:404": "ncp build/404/index.html build/404.html",
 			"rm:404": "rimraf - build/404",
+			"postbuild": "run-s cp:404 rm:404",
 		},
 	}).withTitle("Adding package scripts for putting the 404 page in the correct place after build");
-
-	preset.edit("package.json").update((content) => {
-		const pkg = JSON.parse(content);
-
-		// Preserve old adapt script instead of heavy-handedly replacing it
-		const adapt = pkg.scripts.adapt;
-		pkg.scripts["svelte-kit:adapt"] = adapt || "svelte-kit adapt";
-
-		pkg.scripts["adapt"] = "run-s svelte-kit:adapt cp:404 rm:404";
-
-		return JSON.stringify(pkg, null, "\t");
-	}).withTitle("Updating `adapt` package script to make use of the 404 scripts");
 
 	preset.editJson("package.json").merge({
 		"scripts": {
