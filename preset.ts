@@ -50,10 +50,10 @@ Preset.group((preset) => {
 
 Preset.group((preset) => {
 	preset.editNodePackages().addDev("@sveltejs/adapter-static", "1.0.0-next.2").withTitle("Installing `@sveltejs/adapter-static`");
-	preset.edit("svelte.config.js").update((content) => {
+	preset.edit("svelte.config.cjs").update((content) => {
 		const matchAdapter = /adapter:[\s\r\n]['"](.+)['"]/;
 		return content.replace(matchAdapter, (_match, _currentAdapter) => 'adapter: "@sveltejs/adapter-static"');
-	}).withTitle("Setting the adapter to `@sveltejs/adapter-static` in `svelte.config.js`");
+	}).withTitle("Setting the adapter to `@sveltejs/adapter-static` in `svelte.config.cjs`");
 }).withTitle("Making your site static");
 
 Preset.extract(".github/workflows/build-and-deploy.yml").withTitle("Adding GitHub Actions workflow for deployment");
