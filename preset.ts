@@ -18,7 +18,7 @@ Preset.group((preset) => {
 }).withTitle("Initializing Firebase");
 
 Preset.group((preset) => {
-	preset.editNodePackages().addDev("firebase-tools", "^9.4.0").withTitle("Installing Firebase CLI");
+	preset.editNodePackages().addDev("firebase-tools", "^9.5.0").withTitle("Installing Firebase CLI");
 	preset.editNodePackages().addDev("ncp", "^2.0.0").withTitle("Installing `ncp`");
 	preset.editNodePackages().addDev("npm-run-all", "^4.1.5").withTitle("Installing `npm-run-all`");
 	preset.editNodePackages().addDev("rimraf", "^3.0.2").withTitle("Installing `rimraf`");
